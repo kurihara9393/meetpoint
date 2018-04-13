@@ -1,0 +1,51 @@
+/* baseColor 4A68ad */
+header {
+  background-color: #4A68ad;
+  height: 150px;
+  margin: 0 auto;
+}
+.content-item{
+  border: solid 2px black;
+  margin: 45px;
+  width: 350px;
+  background-color: gray;
+}
+.heading {
+  height: 100px;
+  width: 960px;
+  /*background-color: #CCCCCC;*/
+}
+.navbar {
+  height: 50px;
+  width: 960px;
+  background-color: #A9A9A9;
+}
+
+.contents {
+  background-color: #C0C0C0;
+  width: 960px;
+}
+
+.left-content {
+  width: 640px;
+  background-color: whitesmoke;
+}
+
+/*.right-content {
+  height: 370px;
+  width: 320px;
+  background-color: #f9f9f9;
+  float: left;
+}*/
+footer {
+  background-color: gray;
+  height:50px;
+}
+
+.office-image{
+    background-image: url(/assets/officepicture.jpg);
+    background-size: contain;
+    height: 500px;
+    background-repeat-y: no-repeat;
+}
+

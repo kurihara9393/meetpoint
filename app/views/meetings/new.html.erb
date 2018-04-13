@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>新規登録フォーム</h1>
+
+  <%= link_to "新規に会社を登録する場合はこちら", new_company_path  %>
+
+  <%= form_for @meeting do |f| %>
+<!-- 　　画像投稿箇所を箇所を挿入 -->
+    <div class="form-group">
+      <label for="title">title</label>
+      <%= f.text_field :title, placeholder: 'title',class: 'form-control'%>
+    </div>
+    <div class="form-group">
+
+    </div>
+    <div class="form-group">
+      <label for="customer">customer</label>
+       <%= f.select :company, Company.all.map{|t| [t.name, t.id]}, {include_blank: "会社を選択してね。"}, class: 'form-control'%>
+
+    </div>
+    <div class="form-group">
+      <label for="meeting_place">meeting_place</label>
+      <%= f.text_field :meeting_place, placeholder: 'meeting_place',class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <label for="body">body</label>
+      <%= f.text_area :body, placeholder: 'body',class: 'form-control', cols: 30 ,rows: 5%>
+    </div>
+    <%= f.submit "送信" ,class: 'btn btn-primary btn-lg'%>
+  <% end %>
+
+</div>

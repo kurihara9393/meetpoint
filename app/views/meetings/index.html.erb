@@ -1,0 +1,50 @@
+<header id="header" class="border-b d-flex justify-content-around">
+  <h1>Meetings#index</h1>
+<%= form_tag(meetings_search_path, method: :get) do %>
+ <input type="text" name="keyword">
+ <input type="submit" class="btn btn-sm btn-primary">
+<% end %>
+  <%= button_to "新規作成", {controller: 'meetings', action: 'new'}, {method: :get, class: "btn btn-primary" } %>
+
+</header>
+
+<!-- <%= image_tag "office.jpg"%> -->
+<div class="office-image">
+</div>
+
+
+<div class="d-flex flex-item-row">
+  <div class="left-content d-flex flex-column">
+    <a href="https://google.com">Companies</a>
+    <div class="d-flex flex-item-row">
+  <div class="left-content d-flex flex-column">
+    <a href="https://google.com">Meeting Place</a>
+    <div class="d-flex flex-item-row">
+  <div class="left-content d-flex flex-column">
+    <a href="https://google.com">Comments</a>
+    <div class="d-flex flex-item-row">
+  <div class="left-content d-flex flex-column">
+    <!-- 上記を続ける -->
+  </div>
+  <div class="main-content d-flex flex-item-row flex-wrap">
+    <% @meetings.each do |meeting| %>
+      <div class="content-item">
+        <%= link_to meeting_path(meeting) do %>
+          <p><%=  meeting.title %></p>
+        <% end %>
+
+        <p><%=  meeting.user.name %></p>
+        <p><%=  meeting.company.name %></p>
+        <p><%=  meeting.meeting_place %></p>
+
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
+
+
+<footer>
+  hogehoge app
+</footer>
