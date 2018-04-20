@@ -8,7 +8,7 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    Meeting.create(meeting_params)
+    User.first.meetings.create(meeting_params)
     redirect_to :root
   end
 
@@ -25,7 +25,7 @@ class MeetingsController < ApplicationController
   private
 
     def meeting_params
-      params.require(:meeting).permit(:title, :sales_user, :customer, :meeting_place, :body)
+      params.require(:meeting).permit(:title, :sales_user, :meeting_place, :body).merge(company_id: Company.first.id)
     end
 
 end
