@@ -1,15 +1,41 @@
 /* baseColor 4A68ad */
 header {
   background-color: #4A68ad;
-  height: 150px;
+  height: 55px;
   margin: 0 auto;
+  /*position: fixed;
+  width: 100%;*/
+
+  #title{
+    color:white;
+    padding-top: 7px;
+  }
 }
+
+  .recent-message{
+    font-size: 32px;
+    width: 300px;
+    height:70px;
+    border: solid 1px #8080809c;
+    border-radius: 10px;
+    line-height: 70px;
+    text-align: center;
+  }
+
 .content-item{
-  border: solid 2px black;
-  margin: 45px;
-  width: 350px;
-  background-color: gray;
+  /*border: solid 2px gray;*/
+  border-bottom: solid 1px gray;
+  margin: 10 auto;
+  width: 400px;
+  /*height: 60px;*/
+  /*background-color: whitesmoke;*/
+  /*font-weight: 400;*/
+
+  p{
+    font-size: 20px;
+  }
 }
+
 .heading {
   height: 100px;
   width: 960px;
@@ -49,3 +75,11 @@ footer {
     background-repeat-y: no-repeat;
 }
 
+.image-container{
+  width:100%;
+  overflow-x: scroll;
+}
+.back-image{
+  width: 600px;
+  height: 450px;
+}

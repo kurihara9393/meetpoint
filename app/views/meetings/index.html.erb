@@ -1,50 +1,58 @@
-<header id="header" class="border-b d-flex justify-content-around">
-  <h1>Meetings#index</h1>
-<%= form_tag(meetings_search_path, method: :get) do %>
- <input type="text" name="keyword">
- <input type="submit" class="btn btn-sm btn-primary">
-<% end %>
+<header id="header" class="border-b d-flex justify-content-around align-items-center">
+  <h1 id="title">Meet the Meat</h1>
+
+ <div class="align-items-center d-flex">
+    <%= form_tag(meetings_search_path, method: :get) do %>
+      <div class="d-flex flex-row">
+        <input type="text" name="keyword" class="form-control mr-2">
+        <input type="submit" class="btn btn-sm btn-primary">
+      </div>
+    <% end %>
+ </div>
+
   <%= button_to "新規作成", {controller: 'meetings', action: 'new'}, {method: :get, class: "btn btn-primary" } %>
 
 </header>
 
-<!-- <%= image_tag "office.jpg"%> -->
-<div class="office-image">
+<div class="image-container d-flex flex-row">
+  <%= image_tag "ushi.jpg", class: "back-image" %>
+  <%= image_tag "tori.jpg", class: "back-image" %>
+  <%= image_tag "buta.jpg", class: "back-image" %>
 </div>
 
 
-<div class="d-flex flex-item-row">
-  <div class="left-content d-flex flex-column">
-    <a href="https://google.com">Companies</a>
-    <div class="d-flex flex-item-row">
-  <div class="left-content d-flex flex-column">
-    <a href="https://google.com">Meeting Place</a>
-    <div class="d-flex flex-item-row">
-  <div class="left-content d-flex flex-column">
-    <a href="https://google.com">Comments</a>
-    <div class="d-flex flex-item-row">
-  <div class="left-content d-flex flex-column">
-    <!-- 上記を続ける -->
-  </div>
-  <div class="main-content d-flex flex-item-row flex-wrap">
-    <% @meetings.each do |meeting| %>
-      <div class="content-item">
-        <%= link_to meeting_path(meeting) do %>
-          <p><%=  meeting.title %></p>
-        <% end %>
+<div class="d-flex flex-column">
 
-        <p><%=  meeting.user.name %></p>
-        <p><%=  meeting.company.name %></p>
-        <p><%=  meeting.meeting_place %></p>
+  <div class="d-flex flex-row justify-content-around">
+    <div class="col-4 mt-3 text-center">
+      <%= link_to "Companies" , companies_path, class: "btn btn-lg btn-outline-primary" %>
+    </div>
+    <div class="col-4 mt-3 text-center">
+      <a href="https://google.com" class="btn btn-lg btn-outline-primary">Meeting Place</a>
+    </div>
+    <div class="col-4 mt-3 text-center">
+      <a href="https://google.com" class="btn btn-lg btn-outline-primary">Comments</a>
+    </div>
+  </div>
+
+   <div class="d-flex flex-column align-items-center align-items-center mt-4 ">
+    <p class="recent-message m-3"> Recent Messages </p>
+    <% @meetings.each do |meeting| %>
+      <div class="content-item m-3 d-flex flex-row justify-content-center align-items-center">
+        <%= link_to meeting_path(meeting) do %>
+          <p class="ml-2"><%=  meeting.title %></p>
+        <% end %>
+        <p class="ml-3"><%=  meeting.user.name %></p>
+        <p class="ml-3"><%=  meeting.company.name %></p>
+        <p class="ml-3"><%=  meeting.meeting_place %></p>
 
       </div>
     <% end %>
   </div>
 
-
 </div>
 
 
 <footer>
-  hogehoge app
+
 </footer>
